@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Tour Agency  </title>
+
+ <!-- swiper cdn link -->
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+ <!-- font awesome cdn link  -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+ <!-- custom css file link  -->
+ <link rel="stylesheet" href="style.css">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- header section starts -->
+
+
+<header>
+
+  <div id="menu-bar" class="fas fa-bars"></div>
+
+  <a href="#" class="logo"><span>T</span>ravel</a>
+  
+  <nav class="navbar">
+    <a href="#home">home</a>
+    <a href="#book">book</a>
+    <a href="#packages">packages</a>
+    <a href="#Map">Map</a>
+    <a href="#services">services</a>
+    <a href="#review">review</a>
+    <a href="#contact">contact</a>
+  </nav>
+
+  <div class="icons">
+    <i class="fas fa-search" id="search-btn"></i>
+    <i class="fas fa-user" id="login-btn"></i>
+  </div>
+
+  <form action="" class="search-bar-container">
+    <input type="search" id="search-bar" placeholder="search here...">
+    <label for="search-bar" class="fas fa-search"></label>
+  </form>
+</header>
+
+<!-- header section ends    -->
+
+<!-- login form container -->
+
+<div class="login-form-container">
+
+  <i class="fas fa-times" id="form-close"></i>
+
+  <form action="">
+    <h3>login</h3>
+    <input type="email" class="box" placeholder="enter your email">
+    <input type="password" class="box" placeholder="enter your password">
+    <input type="submit" value="login now" class="btn">
+    <input type="checkbox" id="remember">
+    <label for="remember">remember me</label>
+    <!--<p>forget password? <a href="#">click here</a></p>-->
+    <p>don't have an account? <a href="#">register now</a></p>
+  </form>
+</div>
+
+<!-- home section starts -->
+
+<section class="home" id="home">
+  <div class="content">
+    <h3>adventure is worthwhile</h3>
+    <p>discover new places with us, adventure awaits</p>
+    <a href="#" class="btn">discover more</a>
+  </div>
+
+  <div class="controls">
+    <span class="vid-btn active" data-src="Images/vid-1.mp4"></span>
+    <span class="vid-btn" data-src="Images/vid-2.mp4"></span>
+    <span class="vid-btn" data-src="Images/vid-3.mp4"></span>
+    <span class="vid-btn" data-src="Images/vid-4.mp4"></span>
+    <span class="vid-btn" data-src="Images/vid-5.mp4"></span>
+  </div>
+
+  <div class="video-container">
+    <video src="Images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
+  </div>
+
+</section> 
+<script src="script1.js"></script>
+
+<!-- home section ends --> 
+
+
+<!-- book section starts -->
+<section class="book" id="book">
+  <h1 class="heading">
+    <span>b</span>
+    <span>o</span>
+    <span>o</span>
+    <span>k</span>
+    <span class="space"></span>
+    <span>n</span>
+    <span>o</span>
+    <span>w</span>
+  </h1>
+
+  <div class="row">
+    <div class="image">
+      <img src="Images/book-img.svg" alt="">
+    </div>
+    <form action="">
+      <div class="inputBox">
+        <h3>where to</h3>
+        <input type="text" placeholder="place name">
+      </div>
+      <div class="inputBox">
+        <h3>how many</h3>
+        <input type="number" placeholder="number of guests">
+      </div>
+      <div class="inputBox">
+        <h3>arrivals</h3>
+        <input type="date">
+      </div>
+      <div class="inputBox">
+        <h3>leaving</h3>
+        <input type="date">
+      </div>
+      <input type="submit" class="btn" value="book now">
+    </form>
+  </div>
+</section>
+
+
+<!-- book section ends -->
+
+
+<!-- packages section starts -->
+
+
+<section class="packages" id="packages">
+
+  <h1 class="heading">
+    <span>p</span>
+    <span>a</span>
+    <span>c</span>
+    <span>k</span>
+    <span>a</span>
+    <span>g</span>
+    <span>e</span>
+    <span>s</span>
+  </h1>
+
+  <div class="box-container">
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/lakshadweep/mmt/destination/m_Lakshadweep_l_580_870.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> lakshadweep </h3>
+        <p >Lakshadweep is home to serene beaches. You can expect summer heat and the temperature rising upto 32°C. Lakshadweep is also very popular among relaxation-seekers.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/leh/mmt/destination/m_leh-landscape_l_400_640.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Leh </h3>
+        <p>Prepare to be wooed by the mesmerizing mountains of Leh. You will love sightseeing and the surreal vistas of snow-capped mountains. Leh is also known for its unique wildlife.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/destimgjune2022/mmt/activities/m_Srinagar%204_l_679_1437.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Srinagar </h3>
+        <p>Discover the stunning beauty of Srinagar, situated in the scenic Kashmir Valley. With its rich history and mesmerizing scenery, Srinagar invites you to experience a peaceful and unforgettable adventure.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/havelock/mmt/destination/m_destination_havelock_landscape_l_400_640.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Havelock Island </h3>
+        <p>Havelock is an absolute delight for romantic souls. You can expect extremely hot days with temperatures reaching up to 32°C. Don’t forget to indulge in adventure activities at Havelock</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/pondicherry/mmt/destination/m_destination-pondicherry-landscape_l_400_640.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Pondicherry </h3>
+        <p>opularly known as India’s party capital, Goa seduces travellers from all around the globe with its boho beaches, ancient churches, majestic forts and unbeatable nightlife!</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/goakolkatadestimages/mmt/activities/m_Goa_5_l_663_1000.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Goa </h3>
+        <p>Popularly known as India’s party capital, Goa seduces travellers from all around the globe with its boho beaches, ancient churches, majestic forts and unbeatable nightlife!</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/new_dest_imagemar/mmt/activities/m_Manali_1_l_658_1200.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Manali </h3>
+        <p>Nestled on the banks of River Beas, Manali will take your breath away with its snow-kissed peaks, lush valleys and heart-pumping adventure experiences in the heart of Himalayas</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/new_dest_imagemar/mmt/activities/m_Alleppey_1_l_1316_2400.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Alleppey </h3>
+        <p>Also known as Alappuzha, Aleppey will take your breath away with its emerald green backwaters, palm-fringed lakes and beautiful stretches of lush paddy fields in the heart of Kerala.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/amritsar/mmt/destination/m_destination_Amritsar_l_367_623.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Amritsar </h3>
+        <p>Home to the legendary Sikh shrine Golden Temple, Amritsar is fondly called Ambarsar and will steal your heart with its colourful bazaars, lip-smacking street food, shopping hubs and historical monuments.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/ooty/mmt/destination/m_Ooty_activity_mountains_l_368_613.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Ooty </h3>
+        <p>Officially called Ootacamund, the hill-town is better known by its nickname–Ooty. It is loved by Bollywood directors, honeymooners, families, and even backpackers, for its mountains, lakes, gardens, and waterfalls.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/desttvimg/mmt/destination/m_coorg_tv_destination_img_3_l_815_1222.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Coorg </h3>
+        <p>Unwind in the lap of nature in Coorg where aromatic coffee and spice plantations, lush green hills, cascading waterfalls and a distinct old-world charm sooth the senses</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/m_Rameshwaram_tv_destination_img_2_l_971_1526.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Rameshwaram </h3>
+        <p>Made famous by the epic Ramayana, Rameshwaram is a quaint beach town and a popular Hindu pilgrimage destination that also attracts nature lovers and adventure enthusiasts.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/desttvimg/mmt/destination/m_Dharamshala_&_Mcleodganj_tv_destination_img_6_l_782_1284.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Dharamshala </h3>
+        <p>Nestled in the mystic hills of Himachal Pradesh, Dharamshala and Mcleodganj captivate tourists with their picturesque natural beauty and a unique blend of Tibetan, British and Himachali cultures.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/new_dest_imagemar/mmt/activities/m_mahabaleshwar_3_l_648_1194.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Mahabaleshwar </h3>
+        <p>Mahabaleshwar is the ideal hill station getaway from Mumbai with its mesmerising waterfalls, old forts, historic temples and long stretches of vibrant strawberry plantations.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/desttvimg/mmt/destination/m_puri_tv_destination_img_4_l_667_1000.jpg" alt="">
+      <div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> Puri </h3>
+        <p>About 2 hours from Bhubaneshwar, Puri is a coastal temple town along the Bay of Bengal in Odisha. It lies close to tourist hotspots like Konark Temple and Dhabaleswar Temple.</p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- packages section ends -->
+
+
+<!-- services section starts -->
+<section class="services" id="services">
+
+  <h1 class="heading">
+    <span>s</span>
+    <span>e</span>
+    <span>r</span>
+    <span>v</span>
+    <span>i</span>
+    <span>c</span>
+    <span>e</span>
+    <span>s</span>
+  </h1>
+
+  <div class="box-container">
+
+    <div class="box">
+      <i class="fas fa-hotel"></i>
+      <h3>affordable hotels</h3>
+      <p>Discover comfortable stays without breaking the bank at our selection of affordable hotels, where quality meets affordability for your convenience.</p>
+    </div>
+    <div class="box">
+      <i class="fas fa-utensils"></i>
+      <h3>food and drinks</h3>
+      <p>Indulge in a diverse array of delectable cuisines and refreshing beverages to tantalize your taste buds and elevate your dining experience</p>
+    </div>
+    <div class="box">
+      <i class="fas fa-bullhorn"></i>
+      <h3>safty guide</h3>
+      <p>Ensuring your safety is our priority - our comprehensive safety guide is here to support you every step of the way</p>
+    </div>
+    <div class="box">
+      <i class="fas fa-globe-asia"></i>
+      <h3>around the world</h3>
+      <p>Embark on a global journey of services, transcending borders and cultures to meet your needs wherever you are</p>
+    </div>
+    <div class="box">
+      <i class="fas fa-plane"></i>
+      <h3>fastest travel</h3>
+      <p>Experience the thrill of speed and convenience with our fastest travel services, ensuring you reach your destination in record time</p>
+    </div>
+    <div class="box">
+      <i class="fas fa-hiking"></i>
+      <h3>adventures</h3>
+      <p>Embark on unforgettable adventures with our diverse range of services tailored to satisfy every wanderlust.</p>
+    </div>
+  </div>
+</section>
+
+<!-- services section ends -->
+
+<!-- gallery section starts -->
+
+<!-- review section starts  -->
+<!--
+<section class="review" id="review">
+
+  <h1 class="heading">
+    <span>r</span>
+    <span>e</span>
+    <span>v</span>
+    <span>i</span>
+    <span>e</span>
+    <span>w</span>
+  </h1>
+
+  <div class="swiper-container review-slider">
+
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="box">
+          <img src="images/pic1.png" alt="">
+          <h3>Amelia</h3>
+          <p>"My India trip with this website was seamless and unforgettable. From booking accommodations to planning tours, everything was exceptional. Highly recommended for exploring India</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="box">
+          <img src="images/pic2.png" alt="">
+          <h3>Jack</h3>
+          <p>I'm grateful for the personalized assistance I received during my journey through India. The customer service was excellent, and the itinerary suggestions were invaluable. </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="box">
+          <img src="images/pic3.png" alt="">
+          <h3>Perry</h3>
+          <p>"Grateful for assistance during my India trip. Customer service was top-notch. Personalized itinerary suggestions were invaluable. Will definitely use them again for future adventures in India</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="box">
+          <img src="images/pic4.png" alt="">
+          <h3>John</h3>
+          <p>"Using this website for my India trip was a fantastic decision. The user-friendly interface made booking accommodations and activities effortless.</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- review section ends -->
+
+
+
+
+<!-- contact section starts -->
+
+<section class="contact" id="contact">
+
+  <h1 class="heading">
+    <span>c</span>
+    <span>o</span>
+    <span>n</span>
+    <span>t</span>
+    <span>a</span>
+    <span>c</span>
+    <span>t</span>
+  </h1>
+
+  <div class="row">
+
+    <div class="image">
+      <img src="images/contact-img.svg" alt="">
+    </div>
+
+    <form action="">
+      <div class="inputBox">
+        <input type="text" placeholder="name">
+        <input type="email" placeholder="email">
+      </div>
+      <div class="inputBox">
+        <input type="number" placeholder="number">
+        <input type="text" placeholder="subject">
+      </div>
+      <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+      <input type="submit" class="btn" value="send message">
+    </form>
+
+  </div>
+
+</section>
+
+<!-- contact section ends -->
+
+
+
+<!-- brand section starts -->
+
+<!--
+  <section class="brand-container">
+
+  <div class="swiper-container brand-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/2.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/3.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/4.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/5.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/6.jpg" alt=""></div>
+    </div>
+  </div>
+
+</section>
+-->
+
+
+
+
+
+
+<!-- brand section ends -->
+<!--<section class="book" id="book">
+  <h1 class="heading">
+    <span>A</span>
+    <span>b</span>
+    <span>o</span>
+    <span>u</span>
+    <span>t</span>
+    <span class="space"></span>
+    <span>u</span>
+    <span>s</span>
+  </h1>
+</section>
+<section class="packages" id="packages">
+
+  
+
+  <div class="box-container">
+
+    <div class="box">
+      <img src="https://hblimg.mmtcdn.com/content/hubble/img/lakshadweep/mmt/destination/m_Lakshadweep_l_580_870.jpg" alt="">-->
+      <!--<div class="content">
+        <h3> <i class="fas fa-map-marker-alt"></i> lakshadweep </h3>
+        <p >Discover the world with our comprehensive travel and tourist services, offering expert guidance, personalized itineraries, and insider tips to ensure your adventures are not just journeys, but unforgettable experiences etched in your memory. From booking accommodations to arranging local excursions, we strive to provide seamless travel solutions tailored to your preferences, making exploration effortless and rewarding. With a passion for exploration and a commitment to excellence, let us be your trusted companion in unraveling the wonders of the world</p>
+        
+      </div>
+    </div>
+  </section>-->
+
+<!-- footer section starts -->
+<!--
+<section class="footer">
+
+  <div class="box-container">
+
+    <div class="box">
+
+      <div class="about">
+        <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
+           <span class="icon"></span>
+      </div>
+      <div class="content">
+        
+        <div class="card">
+           
+              <div class="icon"><i class="material-icons md-36">face</i></div>
+              <p class="title">Profile</p>
+              <p class="text">Click to see or edit your profile page.</p>
+           
+        </div>
+      </div>
+
+    </div>
+    <div class="branch">
+      <h3>branch locations</h3>
+      <a href="#">india</a>
+      <a href="#">USA</a>
+      <a href="#">japan</a>
+      <a href="#">france</a>
+    </div>
+    <div class="links">
+      <h3>quick links</h3>
+      <a href="#">home</a>
+      <a href="#">book</a>
+      <a href="#">packages</a>
+      <a href="#">services</a>
+      <a href="#">gallery</a>
+      <a href="#">review</a>
+      <a href="#">contact</a>
+    </div>
+  </div>
+</section>
+
+-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>Travel</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li><a href="#">Mumbai</a></li>
+          <li><a href="#">Banglore</a></li>
+          <li><a href="#">Hyderabad</a></li>
+          <li><a href="#">Bhimavaram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">watch</a></li>
+          <li><a href="#">bag</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">dress</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link -->
+<script src="script.js"></script>
+
+</body>
+</html>
