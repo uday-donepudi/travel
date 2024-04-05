@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rameshwaram, India - Tourist Place</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .description {
+            background-color:0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 20px;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            
+        }
+
+        .description h2 {
+            margin-top: 0;
+        }
+
+        .description p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049; /* Darker Green */
+        }
+
+        @media (max-width: 768px) {
+            .description {
+                padding: 20px;
+            }
+
+            .description h2 {
+                font-size: 24px;
+            }
+
+            .description p {
+                font-size: 16px;
+            }
+
+            .button {
+                font-size: 18px;
+            }
+        }
+        #place1,#place2{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to <span id="place1"></span>, India</h1>
+        <div class="description">
+            <h2>About <span id="place2"></span></h2>
+            <p id="about"></p>
+        </div>
+        <a href="#" class="button">Book Now</a>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyBneYtc0rkDfsmfpb1Yo08bKa-D1bdFWbE",
+        authDomain: "travel-fb974.firebaseapp.com",
+        projectId: "travel-fb974",
+        storageBucket: "travel-fb974.appspot.com",
+        messagingSenderId: "557673784255",
+        appId: "1:557673784255:web:4591b2dab22b1b1730370a",
+        measurementId: "G-6FXFH2Q1YW"
+    };
+
+        const app = initializeApp(firebaseConfig);
+
+        // Access Firestore
+        const db = getFirestore(app);
+
+        // Retrieve Data based on Document
+        const getDataFromFirestore = async (documentId) => {
+        try {
+            const docRef = doc(db, "Destinations", documentId);
+            const docSnapshot = await getDoc(docRef);
+            if (docSnapshot.exists()) {
+            document.getElementById('place1').textContent = documentId;
+            document.getElementById('place2').textContent = documentId;
+            const about = document.getElementById('about');
+            const fieldValue = docSnapshot.data().about; 
+            about.textContent = fieldValue;
+            const img = docSnapshot.data().image;
+            const imageUrl = "url(" + img + ")";
+
+           const linearGradient = "linear-gradient( rgba(0, 0, 0, 0.3), rgba(109, 76, 209, 0.3) )";
+            document.body.style.backgroundImage = `${linearGradient}, ${imageUrl}`;
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundSize = "cover";
+            } else {
+            alert("No such document!");
+            }
+        } catch (error) {
+            alert("Error getting document:");
+        }
+        };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getDataFromFirestore(localStorage.getItem('globalParam'));
+    });
+        
+        
+
+    </script>
+</body>
+</html>

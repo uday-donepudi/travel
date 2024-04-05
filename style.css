@@ -340,6 +340,7 @@ header .search-bar-container label:hover {
 
 .book .row form .inputBox {
  padding: .5rem 0;
+
 }
 
 .book .row form .inputBox input {
@@ -349,6 +350,7 @@ header .search-bar-container label:hover {
  font-size: 1.7rem;
  color: #333;
  text-transform: none;
+ border-radius: 20px;
 }
 
 .book .row form .inputBox h3 {
