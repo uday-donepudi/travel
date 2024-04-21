@@ -1,0 +1,150 @@
+/* Package.html */
+
+.package-body {
+    position: relative;
+    background-color: #fdf5f5;
+    color: rgb(2, 2, 2);
+}
+.stars i {
+    font-size: 20px;
+    color: rgb(246, 198, 8);
+}
+
+
+.package-heading {
+  background-color: #151515;
+  background-image: url("https://images.pexels.com/photos/346286/panorama-miami-florida-water-346286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  
+    padding: 100px;  
+}
+.package-heading h1 {
+    margin-top: 20px;
+    font-size: 40px;
+    color: white;
+}
+
+.package-heading p{
+    color: white;
+    
+}
+
+.package3 {
+    display: grid;
+    padding: 10px;
+    gap: 0px;
+}
+.pack{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 18px;
+    row-gap: 40px;
+}
+.pack3-content {
+    background-color: #fdf5f5;
+    border-radius: 15px;
+    box-shadow: 8px 8px 12px #beb9b9;
+    background: linear-gradient( #ddbd47 3%, #fff 9%, #fff 100%);
+    padding: 25px;
+    padding-right: 50px;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 1px;
+    gap: 15px;
+}
+
+.box{
+    box-shadow: 2px 2px 4px #6d6666;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform .5s ease;
+
+    }
+.box:hover{
+    transform: scale(1.05);
+}
+.package-title {
+    text-align: center;
+}
+.img{
+    width: 100%;
+    object-fit: cover;
+    margin-top: 0;
+}
+
+.package-title h2 {
+    font-size: 30px;
+    font-weight: 650;
+    padding-bottom: 10px;
+    line-height: 2;
+}
+.content{
+    padding: 20px;
+}
+
+
+
+
+.text-block1 {
+    color: black;
+    
+    display: block;
+    margin-bottom: 20px;
+    
+}
+
+
+
+ img {
+    margin-top: 50px;
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    cursor: pointer;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    
+}
+
+.image-pac h3 {
+    color: rgb(16, 16, 16);
+    position: static;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    bottom: 10px;
+    right: 25px;
+}
+  .button {
+    display: inline-block;
+    position: static;
+    font-size: 12px;
+    padding: 10px 30px;
+    color: white;
+    background-color: #83b6f0;
+    box-shadow: -1px 3px 3px 0 rgba(80, 80, 80, 0.2);
+    border-radius: 25px;
+    border: none;
+    text-decoration: none;
+    flex-wrap: wrap;
+    transition: all 0.3ms ease;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    color: rgb(21, 74, 74);
+    background-color: rgb(88, 124, 192);
+    box-shadow: -1px 6px 10px 0 rgba(120, 60, 20, 0.2);
+    padding: 10px 30px;
+  }
+  .PB{
+  display: flex;
+  justify-content: space-between;  
+  }
+  .PB.price{
+    display: flex;
+    margin-top: 100px;
+  }
+  .PB.dbtn{
+    display: flex;
+   
+  }
