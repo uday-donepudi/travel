@@ -50,7 +50,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Impressive Stripe Payment Form</h1>
+    <h1>Make Payment</h1>
 
     <form id="payment-form">
       <div>
@@ -78,7 +78,8 @@
 
     form.addEventListener('submit', function(event) {
       event.preventDefault();
-
+      var flag = localStorage.getItem('flag');
+      if(flag==='0'){
       stripe.createToken(card).then(function(result) {
         if (result.error) {
           errorElement.textContent = result.error.message;
@@ -86,11 +87,17 @@
           stripeTokenHandler(result.token);
         }
       });
+    }
+    else{
+      alert("login into account");
+      window.location.href="login.html";
+    }
     });
 
     function stripeTokenHandler(token) {
       // You can insert additional code here to handle the token, like sending it to your server.
       alert('Payment successful! Token ID: ' + token.id);
+      window.location.href="index.html";
       // You might redirect the user to a thank you page or update the UI to indicate success.
     }
   </script>
