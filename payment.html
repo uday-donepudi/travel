@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Impressive Stripe Payment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #payment-form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+
+    #payment-form label {
+      font-weight: bold;
+    }
+
+    #card-element {
+      margin-bottom: 20px;
+    }
+
+    #card-errors {
+      color: red;
+      margin-top: 10px;
+    }
+
+    #submit-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #submit-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Impressive Stripe Payment Form</h1>
+
+    <form id="payment-form">
+      <div>
+        <label for="card-element">Credit or Debit Card</label>
+        <div id="card-element">
+          <!-- A Stripe Element will be inserted here. -->
+        </div>
+
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+      </div>
+
+      <button id="submit-button" type="submit">Submit Payment</button>
+    </form>
+  </div>
+
+  <script>
+    var stripe = Stripe('pk_test_51P7tdTSCXtiZqUbPfHBWIdMI0E7N1Z8alkxOYd30qF5UOzYrW07M4VAdPBUERwgMHBuMiPNyo4PHq0htpMZfmccZ00mHSTSlxj');
+    var elements = stripe.elements();
+    var card = elements.create('card');
+    card.mount('#card-element');
+
+    var form = document.getElementById('payment-form');
+    var errorElement = document.getElementById('card-errors');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      stripe.createToken(card).then(function(result) {
+        if (result.error) {
+          errorElement.textContent = result.error.message;
+        } else {
+          stripeTokenHandler(result.token);
+        }
+      });
+    });
+
+    function stripeTokenHandler(token) {
+      // You can insert additional code here to handle the token, like sending it to your server.
+      alert('Payment successful! Token ID: ' + token.id);
+      // You might redirect the user to a thank you page or update the UI to indicate success.
+    }
+  </script>
+</body>
+</html>

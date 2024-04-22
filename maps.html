@@ -19,110 +19,47 @@ var mapProp= {
   zoom:7,
 };
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-new google.maps.Marker({
-  
-    position: {lat: 34.1662548, lng: 77.5255386},
-    map,
-    title: "Leh",
+
+var markers = [
+    {lat: 34.1662548, lng: 77.5255386, title: "Leh"},
+    {lat: 15.3494864, lng: 73.6770359, title: "Goa"},
+    {lat: 11.1141526, lng: 72.7100792, title: "Lakshadweep"},
+    {lat: 34.106691, lng: 74.7243538, title: "Srinagar"},
+    {lat: 12.436907, lng: 92.7970551, title: "Havelock"},
+    {lat: 11.9362923, lng: 79.7723282, title: "Pondicherry"},
+    {lat: 32.2394704, lng: 77.1665202, title: "Manali"},
+    {lat: 9.5010271, lng: 76.2597038, title: "Alleppey"},
+    {lat: 31.6335177, lng: 74.7877188, title: "Amritsar"},
+    {lat: 11.4118497, lng: 76.6522217, title: "Ooty"},
+    {lat: 12.4314273, lng: 75.7142702, title: "Coorg"},
+    {lat: 9.2875069, lng: 79.3007273, title: "Rameshwaram"},
+    {lat: 32.2167769, lng: 76.2985656, title: "Dharamshala"},
+    {lat: 17.925821, lng: 73.6281821, title: "Mahabaleshwar"},
+    {lat: 19.8088252, lng: 85.8010003, title: "Puri"}
+];
+
+  markers.forEach(function(markerInfo) {
+    var marker = new google.maps.Marker({
+      position: {lat: markerInfo.lat, lng: markerInfo.lng},
+      map: map,
+      title: markerInfo.title,
+    });
+
+    // Add event listener to each marker
+    marker.addListener('click', function() {
+      localStorage.setItem('globalParam', markerInfo.title);
+      window.location.href ="sample.html"
+    });
   });
-
-new google.maps.Marker({
-  position: {lat: 15.3494864, lng: 73.6770359},
-  map,
-  title: "Goa",
-});
-
-new google.maps.Marker({
-  position: {lat: 11.1141526, lng: 72.7100792},
-  map,
-  title: "Lakshadweep",
-});
-
-
-new google.maps.Marker({
-  position: {lat:34.106691, lng: 74.7243538},
-  map,
-  title: "Srinagar",
-});
-
-
-new google.maps.Marker({
-  position: {lat:12.436907, lng: 92.7970551},
-  map,
-  title: "Havelock",
-});
-
-
-new google.maps.Marker({
-  position: {lat:11.9362923, lng: 79.7723282},
-  map,
-  title: "Pondicherry",
-});
-
-
-new google.maps.Marker({
-  position: {lat:32.2394704, lng: 77.1665202},
-  map,
-  title: "Manali",
-}); 
-
-
-new google.maps.Marker({
-  position: {lat:9.5010271, lng: 76.2597038},
-  map,
-  title: "Alleppey",
-});
-
-
-new google.maps.Marker({
-  position: {lat:31.6335177, lng: 74.7877188},
-  map,
-  title: "Amritsar",
-});
-
-
-new google.maps.Marker({
-  position: {lat:11.4118497, lng: 76.6522217},
-  map,
-  title: "Ooty",
-});
-
-
-new google.maps.Marker({
-  position: {lat:12.4314273, lng: 75.7142702},
-  map,
-  title: "Coorg",
-});
-
-
-new google.maps.Marker({
-  position: {lat:9.2875069, lng: 79.3007273},
-  map,
-  title: "Rameshwaram",
-});
-
-
-new google.maps.Marker({
-  position: {lat:32.2167769, lng: 76.2985656},
-  map,
-  title: "Dharamshala",
-});
-
-
-new google.maps.Marker({
-  position: {lat:17.925821, lng: 73.6281821},
-  map,
-  title: "Mahabaleshwar",
-});
-
-
-new google.maps.Marker({
-  position: {lat:19.8088252, lng: 85.8010003},
-  map,
-  title: "Puri",
-});
-
 }
+
+
+
+
+
+
+
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI-rYMI7M4tL9pvSZnR7cSyJpAZTcyuU8&callback=myMap"></script>
