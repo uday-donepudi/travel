@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Table</title>
+    <link rel="stylesheet" href="css/trans.css">
+</head>
+<body>
+    <section>
+        <!--for demo wrap-->
+        <h1>Transaction Table </h1>
+        <div class="tbl-header">
+          <table id="transactionTable">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Place</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table body will be dynamically populated -->
+            </tbody>
+        </table>
+        </div>
+      </section>
+      
+      
+      <!-- follow me template -->
+      <!-- <div class="made-with-love">
+        Made with
+        <i>♥</i> by
+        <a target="_blank" href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+      </div> -->
+
+
+      <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+    apiKey: "AIzaSyBneYtc0rkDfsmfpb1Yo08bKa-D1bdFWbE",
+    authDomain: "travel-fb974.firebaseapp.com",
+    projectId: "travel-fb974",
+    storageBucket: "travel-fb974.appspot.com",
+    messagingSenderId: "557673784255",
+    appId: "1:557673784255:web:4591b2dab22b1b1730370a",
+    measurementId: "G-6FXFH2Q1YW"
+  };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        var flag = localStorage.getItem('flag');
+        if(flag==='0'){
+          const transactionTable = document.getElementById('transactionTable').getElementsByTagName('tbody')[0];
+
+// Function to fetch transactions from Firestore and populate the table
+const populateTable = async () => {
+    const querySnapshot = await getDocs(collection(db, "transactions"));
+    querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const row = transactionTable.insertRow();
+        row.insertCell().textContent = doc.id; // Transaction ID
+        row.insertCell().textContent = data.amount; // Amount
+        row.insertCell().textContent = data.date.toDate().toLocaleString(); // Date
+        row.insertCell().textContent = data.place; // Place
+    });
+};
+
+populateTable().catch(error => {
+    console.error("Error populating table:", error);
+});
+    }
+    else{
+      alert("login into account");
+      window.location.href="login.html";
+    }
+
+       
+    </script>
+</body>
+</html>

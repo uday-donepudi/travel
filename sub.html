@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful Payment</title>
+    <link rel="stylesheet" href="css/packages.css">
+    <style>
+        /* Style to center the content */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Style for the content */
+        div {
+            text-align: center; /* Center align text inside div */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Payment Successful</h1>
+        <p>Your payment has been processed successfully.</p>
+        
+        <!-- Your payment success message and any other content -->
+        <button class="button" onclick="window.location.href='index.html';">Back</button>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBneYtc0rkDfsmfpb1Yo08bKa-D1bdFWbE",
+            authDomain: "travel-fb974.firebaseapp.com",
+            projectId: "travel-fb974",
+            storageBucket: "travel-fb974.appspot.com",
+            messagingSenderId: "557673784255",
+            appId: "1:557673784255:web:4591b2dab22b1b1730370a",
+            measurementId: "G-6FXFH2Q1YW"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const addDataToFirestore = async (collectionName, data) => {
+            try {
+                // Add current timestamp to the data
+                data.date = new Date();
+                
+                const docRef = await addDoc(collection(db, collectionName), data);
+                console.log("Document written with ID: ", docRef.id);
+                return docRef.id;
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                return null;
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tok = localStorage.getItem('trade');
+            const a = localStorage.getItem('globalParam');
+            if (tok && a) {
+                const data = {
+                    amount: 20000,
+                    date: new Date(),
+                    id: tok,
+                    place: a
+                };
+
+                addDataToFirestore("transactions", data)
+                    .then((docId) => {
+                        if (docId) {
+                            console.log("Data added successfully with document ID:", docId);
+                        } else {
+                            console.log("Failed to add data.");
+                        }
+                    });
+            } else {
+                console.log("Token or globalParam is missing from localStorage.");
+            }
+        });
+    </script>
+    
+</body>
+</html>

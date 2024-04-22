@@ -83,6 +83,7 @@
       stripe.createToken(card).then(function(result) {
         if (result.error) {
           errorElement.textContent = result.error.message;
+          alert('error');
         } else {
           stripeTokenHandler(result.token);
         }
@@ -97,8 +98,10 @@
     function stripeTokenHandler(token) {
       // You can insert additional code here to handle the token, like sending it to your server.
       alert('Payment successful! Token ID: ' + token.id);
-      window.location.href="index.html";
+      localStorage.setItem('trade'," "+token.id);
+      window.location.href="sub.html";
       // You might redirect the user to a thank you page or update the UI to indicate success.
+
     }
   </script>
 </body>
